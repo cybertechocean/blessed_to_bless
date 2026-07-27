@@ -2,7 +2,7 @@
 
 ## Overview
 
-Blessed To Bless Humanity Aid (BBHA) or rather "BLESSED TO BLESS" is a production-ready Django 5 web
+Blessed To Bless Humanity Aid (BBHA) or rather "BLESSED TO BLESS" is a production-ready Django 6 web
 platform for an international humanitarian NGO operating in the
 Democratic Republic of Congo, Kenya, and Tanzania.
 
