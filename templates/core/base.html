@@ -1,0 +1,78 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Blessed To Bless | Changing Lives. Restoring Hope.{% endblock %}</title>
+  <meta name="description" content="{% block description %}Blessed To Bless Humanity Aid partners with communities in the DRC, Kenya and Tanzania to restore hope and build resilient futures.{% endblock %}">
+  <meta name="theme-color" content="#00508e">
+  <meta property="og:site_name" content="Blessed To Bless Humanity Aid">
+  <meta property="og:title" content="Blessed To Bless Humanity Aid">
+  <meta property="og:description" content="Changing lives. Restoring hope. Empowering communities.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://blessedtobless.org{{ request.path }}">
+  <link rel="icon" href="{% static 'images/logo.jpeg' %}" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span><i data-lucide="map-pin"></i> Kinshasa · Kenya · Tanzania</span>
+      <div class="topbar-links">
+        <a href="mailto:info@blessedtobless.org"><i data-lucide="mail"></i> info@blessedtobless.org</a>
+        <a href="#"><i data-lucide="globe-2"></i></a>
+        <a href="#"><i data-lucide="camera"></i></a>
+        <form class="language-switch" action="{% url 'set_language' %}" method="post">
+          {% csrf_token %}<input type="hidden" name="next" value="{{ request.path }}">
+          <button name="language" value="en" type="submit">EN</button><span>/</span><button name="language" value="fr" type="submit">FR</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="{% url 'home' %}" class="brand" aria-label="Blessed To Bless home">
+        <img src="{% static 'images/logo.jpeg' %}" alt="Blessed To Bless logo">
+        <span><strong>BLESSED</strong><small>TO BLESS</small></span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation"><i data-lucide="menu"></i></button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="{% url 'about' %}">About us</a>
+        <a href="{% url 'programmes' %}">Programmes</a>
+        <a href="{% url 'campaign' %}">Emergency appeal</a>
+        <a href="{% url 'news' %}">Stories</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a class="button button-small button-green" href="{% url 'donate' %}">Donate <i data-lucide="arrow-up-right"></i></a>
+      </nav>
+    </div>
+  </header>
+  {% if messages %}
+    <div class="container messages">
+      {% for message in messages %}<div class="message {{ message.tags }}"><i data-lucide="check-circle-2"></i>{{ message }}</div>{% endfor %}
+    </div>
+  {% endif %}
+  <main id="main-content">{% block content %}{% endblock %}</main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="{% url 'home' %}" class="brand brand-light"><img src="{% static 'images/logo.jpeg' %}" alt=""><span><strong>BLESSED</strong><small>TO BLESS</small></span></a>
+        <p>We are blessed to bless others, supported to support others, and helped to help others.</p>
+        <div class="socials"><a href="#" aria-label="Social media"><i data-lucide="globe-2"></i></a><a href="#" aria-label="Photos"><i data-lucide="camera"></i></a><a href="#" aria-label="Professional network"><i data-lucide="briefcase-business"></i></a></div>
+      </div>
+      <div><h3>Explore</h3><a href="{% url 'about' %}">About us</a><a href="{% url 'programmes' %}">Our programmes</a><a href="{% url 'news' %}">News & updates</a><a href="{% url 'gallery' %}">Gallery</a></div>
+      <div><h3>Get involved</h3><a href="{% url 'donate' %}">Donate</a><a href="{% url 'volunteer' %}">Volunteer</a><a href="{% url 'campaign' %}">Emergency appeal</a><a href="{% url 'contact' %}">Partner with us</a></div>
+      <div><h3>Stay connected</h3><p>Receive occasional updates about the communities we serve.</p><form class="subscribe-form" action="#" method="post"><input type="email" aria-label="Email address" placeholder="Your email address" required><button aria-label="Subscribe"><i data-lucide="arrow-right"></i></button></form><small>By subscribing, you agree to our privacy policy.</small></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 Blessed To Bless Humanity Aid</span><div><a href="{% url 'privacy' %}">Privacy</a><a href="{% url 'terms' %}">Terms</a><a href="{% url 'contact' %}">Contact</a></div></div>
+  </footer>
+  <a class="whatsapp" href="https://wa.me/243818444877" aria-label="Chat with us on WhatsApp"><i data-lucide="message-circle"></i></a>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="{% static 'js/site.js' %}"></script>
+</body>
+</html>

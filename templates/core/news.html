@@ -1,0 +1,6 @@
+{% extends "core/base.html" %}
+{% block title %}News & updates | Blessed To Bless{% endblock %}
+{% block content %}
+{% include "core/page_header.html" with eyebrow="From the field" title="News & updates" %}
+<section class="section"><div class="container section-lead"><div class="eyebrow"><span></span> Stories of possibility</div><h2>See what your<br><em>support makes possible.</em></h2></div><div class="container news-list">{% for article in news %}<article class="news-row"><div class="news-image" style="background-image:url('{% if article.image_url %}{{ article.image_url }}{% else %}{{ article.image }}{% endif %}')"></div><div class="news-copy"><span class="tag">{{ article.category }}</span><small>{{ article.published_at|date:"M d, Y"|default:article.date }}</small><h3>{{ article.title }}</h3><p>{{ article.excerpt }}</p><a href="{% if article.slug %}{% url 'article-detail' article.slug %}{% else %}{% url 'news' %}{% endif %}" class="text-link">Read story <i data-lucide="arrow-right"></i></a></div></article>{% empty %}<p>No stories published yet.</p>{% endfor %}</div></section>
+{% endblock %}

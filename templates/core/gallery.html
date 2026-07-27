@@ -1,0 +1,6 @@
+{% extends "core/base.html" %}
+{% block title %}Gallery | Blessed To Bless{% endblock %}
+{% block content %}
+{% include "core/page_header.html" with eyebrow="Our work in pictures" title="Gallery" %}
+<section class="section"><div class="container section-lead"><div class="eyebrow"><span></span> Moments that matter</div><h2>People. Purpose.<br><em>Possibility.</em></h2></div><div class="container gallery-grid">{% for image in gallery %}<figure class="gallery-item"><img src="{{ image.image_url }}" alt="{{ image.title }}" loading="lazy"><figcaption><span>{{ image.category }}</span><strong>{{ image.title }}</strong></figcaption></figure>{% endfor %}</div></section>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "core/base.html" %}
+{% block title %}Volunteer | Blessed To Bless{% endblock %}
+{% block content %}
+{% include "core/page_header.html" with eyebrow="Get involved" title="Volunteer" %}
+<section class="section"><div class="container form-layout"><div><div class="eyebrow"><span></span> Your time can change a life</div><h2>Bring your gifts<br><em>to the work.</em></h2><p class="large-copy">Whether you have an hour, a skill or a story to share, there is a place for you in this movement.</p><p>Tell us a little about yourself and the kind of work that inspires you. Our team will follow up when a good opportunity comes up.</p></div><form class="site-form" method="post">{% csrf_token %}{% for field in form %}<div class="form-field"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{% if field.errors %}<small class="form-error">{{ field.errors|striptags }}</small>{% endif %}</div>{% endfor %}<button class="button button-green" type="submit">Send application <i data-lucide="arrow-up-right"></i></button></form></div></section>
+{% endblock %}

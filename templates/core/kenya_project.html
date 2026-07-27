@@ -1,0 +1,7 @@
+{% extends "core/base.html" %}
+{% block title %}Kenya project | Blessed To Bless{% endblock %}
+{% block content %}
+{% include "core/page_header.html" with eyebrow="Our work in Kenya" title="Kenya project" %}
+<section class="section"><div class="container two-col align-center"><div><div class="eyebrow"><span></span> A community-led future</div><h2>Growing stronger<br><em>together.</em></h2></div><div class="intro-copy"><p class="large-copy">In Kenya, we work alongside local leaders to connect families with livelihood opportunities, education and practical support.</p><p>Our approach is simple: listen to what communities need, invest in local capability and celebrate every step forward.</p><a class="button button-blue" href="{% url 'contact' %}">Partner with us <i data-lucide="arrow-up-right"></i></a></div></div></section>
+<section class="section light-bg"><div class="container kenya-feature"><div class="kenya-photo" style="background-image:url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1400&q=85')"></div><div class="kenya-facts"><div class="eyebrow"><span></span> Kenya in focus</div><h2>Local leadership<br>is <em>the way forward.</em></h2><div class="fact-list"><div><strong>01</strong><span>Livelihoods & resilience</span></div><div><strong>02</strong><span>Youth development</span></div><div><strong>03</strong><span>Community partnership</span></div></div></div></div></section>
+{% endblock %}

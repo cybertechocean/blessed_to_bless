@@ -1,0 +1,6 @@
+{% extends "core/base.html" %}
+{% block title %}Our programmes | Blessed To Bless{% endblock %}
+{% block content %}
+{% include "core/page_header.html" with eyebrow="Our programmes" title="Our programmes" %}
+<section class="section"><div class="container section-lead"><div class="eyebrow"><span></span> Where we focus</div><h2>Practical care.<br><em>Lasting possibility.</em></h2><p>Our programmes respond to urgent needs while strengthening the people, skills and systems that make communities resilient.</p></div><div class="container programme-list">{% for programme in programmes %}<a class="programme-row" href="{% url 'programme-detail' programme.slug %}"><div class="row-number">{{ forloop.counter|stringformat:"02d" }}</div><div class="row-icon"><i data-lucide="{{ programme.icon }}"></i></div><div class="row-copy"><h3>{{ programme.title }}</h3><p>{{ programme.summary }}</p></div><i class="row-arrow" data-lucide="arrow-up-right"></i></a>{% endfor %}</div></section>
+{% endblock %}

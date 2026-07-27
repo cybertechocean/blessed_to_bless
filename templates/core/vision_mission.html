@@ -1,0 +1,7 @@
+{% extends "core/base.html" %}
+{% block title %}Vision & mission | Blessed To Bless{% endblock %}
+{% block content %}
+{% include "core/page_header.html" with eyebrow="What guides us" title="Vision & mission" %}
+<section class="section"><div class="container manifesto"><div class="manifesto-block"><div class="eyebrow"><span></span> Our vision</div><h2>A leading humanitarian organization transforming lives and empowering communities through compassion, dignity and sustainable development.</h2></div><div class="manifesto-block green"><div class="eyebrow"><span></span> Our mission</div><h2>To improve the lives of vulnerable people through humanitarian relief, education, healthcare, empowerment and sustainable development.</h2></div></div></section>
+<section class="section light-bg"><div class="container two-col align-center"><div><div class="eyebrow"><span></span> Our approach</div><h2>From urgent needs<br>to <em>lasting change.</em></h2></div><div class="intro-copy"><p>Relief and resilience belong together. We respond quickly when people are in crisis, while building the relationships and systems that help communities face tomorrow with greater strength.</p><a class="text-link" href="{% url 'programmes' %}">Explore our programmes <i data-lucide="arrow-right"></i></a></div></div></section>
+{% endblock %}

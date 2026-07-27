@@ -1,0 +1,6 @@
+{% extends "core/base.html" %}
+{% block title %}{{ article.title }} | Blessed To Bless{% endblock %}
+{% block content %}
+<section class="article-header"><div class="container narrow"><span class="tag">{{ article.category }}</span><h1>{{ article.title }}</h1><p>{{ article.published_at|date:"F d, Y" }}</p></div></section>
+<section class="section"><div class="container article-layout"><article><img class="article-image" src="{{ article.image_url }}" alt="{{ article.title }}"><div class="article-body"><p class="lead">{{ article.excerpt }}</p>{{ article.body|linebreaks }}</div></article><aside><div class="aside-card"><div class="eyebrow"><span></span> Keep connected</div><h3>Follow the work</h3><p>Discover more stories from the communities we serve.</p><a class="button button-blue full-button" href="{% url 'news' %}">More stories <i data-lucide="arrow-right"></i></a></div></aside></div></section>
+{% endblock %}

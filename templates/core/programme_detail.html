@@ -1,0 +1,6 @@
+{% extends "core/base.html" %}
+{% block title %}{{ programme.title }} | Blessed To Bless{% endblock %}
+{% block content %}
+<section class="detail-hero" style="background-image:linear-gradient(90deg,rgba(0,41,74,.9),rgba(0,41,74,.3)),url('{{ programme.image_url }}')"><div class="container detail-hero-content"><div class="eyebrow light"><span></span> Our programme</div><h1>{{ programme.title }}</h1><p>{{ programme.summary }}</p></div></section>
+<section class="section"><div class="container detail-grid"><div><div class="eyebrow"><span></span> Why it matters</div><h2>Care that meets<br><em>people where they are.</em></h2></div><div class="intro-copy"><p class="large-copy">{{ programme.description }}</p><div class="detail-columns"><div><h3>Our objectives</h3><p>{{ programme.objectives|default:"Create safe, inclusive pathways for people and communities to shape a healthier, more hopeful future." }}</p></div><div><h3>What we do</h3><p>{{ programme.activities|default:"We listen, partner locally and invest in solutions that are practical, dignified and built to last." }}</p></div></div><a class="button button-green" href="{% url 'donate' %}">Support this work <i data-lucide="arrow-up-right"></i></a></div></div></section>
+{% endblock %}

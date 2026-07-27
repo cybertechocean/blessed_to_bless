@@ -1,0 +1,8 @@
+{% load static %}
+<section class="page-header">
+  <div class="container page-header-content">
+    <div class="eyebrow light"><span></span> {{ eyebrow|default:"Blessed To Bless Humanity Aid" }}</div>
+    <h1>{{ title }}</h1>
+    {% if intro %}<p>{{ intro }}</p>{% endif %}
+  </div>
+</section>
