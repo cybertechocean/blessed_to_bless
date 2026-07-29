@@ -1,5 +1,7 @@
 # Blessed To Bless Humanity Aid (BBHA)
 
+The file "WEBSITE_DEVELOPMENT_PROMPT.md" with development PROMPT is in the ROOT FOLDER.
+
 ## Overview
 
 Blessed To Bless Humanity Aid (BBHA) or rather "BLESSED TO BLESS" is a production-ready Django 6 web
